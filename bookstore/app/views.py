@@ -16,7 +16,7 @@ page = 0
 bookId = 0
 
 con = sql.connect(host="localhost", user="root",
-                  passwd="Huraira786@", database='bookstore')
+                  passwd="*********", database='bookstore')
 dbCursor = con.cursor()
 
 # Create your views here.
