@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Add Books</title>
+    <style>
+        .main-content {
+            margin-bottom: 75px;
+        }
+
+        .form-register {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+
+            font: bold 14px sans-serif;
+            text-align: center;
+        }
+
+        .form-register-with-email {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 130px;
+            text-align: center;
+        }
+
+        .form-register-with-email .form-white-background {
+            width: 570px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            padding: 50px 80px;
+            margin-bottom: 5px;
+        }
+
+        .form-register-with-email .form-row {
+            text-align: left;
+            margin-bottom: 23px;
+        }
+
+        .form-register-with-email .form-title-row {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .form-register-with-email h1 {
+            display: inline-block;
+            box-sizing: border-box;
+            color: #4c565e;
+            font-size: 24px;
+            padding: 0 20px 5px;
+            border-bottom: 2px solid #6caee0;
+            margin: 0;
+        }
+
+        .form-register-with-email .form-row>label span {
+            display: inline-block;
+            box-sizing: border-box;
+            color: #5f5f5f;
+            width: 125px;
+            text-align: right;
+            padding-right: 25px;
+        }
+
+        .form-register-with-email input {
+            color: #5f5f5f;
+            box-sizing: border-box;
+            width: 230px;
+            box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+            padding: 12px 18px;
+            border: 1px solid #dbdbdb;
+        }
+
+        .form-register-with-email select {
+            color: #5f5f5f;
+            box-sizing: border-box;
+            width: 230px;
+            box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+            padding: 12px 18px;
+            border: 1px solid #dbdbdb;
+        }
+
+
+        .form-register-with-email button {
+            display: block;
+            border-radius: 2px;
+            background-color: #6caee0;
+            color: #ffffff;
+            font-weight: bold;
+            box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+            padding: 10px 35px;
+            border: 0;
+            margin: 15px auto 0;
+            cursor: pointer;
+        }
+
+        .form-register-with-email .form-log-in-with-existing {
+            text-decoration: none;
+            padding: 4px 8px;
+            font-weight: normal;
+            color: #7b9d62;
+            background-color: #d6f0c3;
+        }
+
+        html {
+            background-color: #f3f3f3;
+        }
+    </style>
+    <script>
+        if ({ message })
+            alert('{{ message }}');
+    </script>
+
+</head>
+
+<div class="main-content">
+
+    <!-- You only need this form and the form-register.css -->
+
+    <form class="form-register" method="post" action="#">
+        {% csrf_token %}
+        {% load static %}
+        <div class="form-register-with-email">
+
+            <div class="form-white-background">
+
+                <div class="form-title-row">
+                    <h1>Add New Books</h1>
+                </div>
+
+                <div class="form-row">
+                    <label>
+                        <span>Book Title</span>
+                        <input type="text" name="book_title">
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <label>
+                        <span>Auther</span>
+                        <input type="text" name="auther">
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <label>
+                        <span>Department</span>
+                        <input type="text" name="department">
+                    </label>
+                </div>
+                <div class="form-row">
+                    <label>
+                        <span>No of Pages</span>
+                        <input type="text" name="pages">
+                    </label>
+                </div>
+                <div class="form-row">
+                    <button type="submit">Add</button>
+                </div>
+
+            </div>
+
+            <a href="../booklist" class="form-log-in-with-existing">view all books</a>
+
+
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>
