@@ -140,11 +140,32 @@
             background-color: #0064bd;
             box-shadow: none;
         }
+
+        .submit {
+            float: right;
+            border: none;
+            background: #EDEDED;
+            color: arial;
+            font-size: 17px;
+            padding: 7px 25px;
+        }
+
+        .submit:hover {
+            background: rgb(255, 78, 34);
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
+    <form class="submit" action="../logout/" method="post">
+        {% csrf_token %}
+        <button type="submit" value="logout">
+            LOGOUT
+        </button>
+    </form>
     <div class="container">
+
 
         <div class="table">
             <div class="table-header">

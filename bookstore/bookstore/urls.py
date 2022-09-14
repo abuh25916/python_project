@@ -14,4 +14,5 @@ urlpatterns = [
     path('updatebook/<int:id>', views.updatebook),
     path('deleteBook/<int:id>', views.deleteBook),
     path('updatebookdb/<int:id>', views.updatebookdb),
+    path('logout/', views.logout),
 ]

@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 import mysql.connector as sql
+from django.contrib.auth import logout as logouts
 
 
 fulln = ''
@@ -16,7 +17,7 @@ page = 0
 bookId = 0
 
 con = sql.connect(host="localhost", user="root",
-                  passwd="*********", database='bookstore')
+                  passwd="root", database='bookstore')
 dbCursor = con.cursor()
 
 # Create your views here.
@@ -146,3 +147,11 @@ def updatebook(request, id):
     dbCursor.execute(query)
     data = dbCursor.fetchall()
     return render(request, 'updatebook.html', {'bookdata': data})
+
+
+# Logout
+def logout(request):
+    if request.method == 'POST':
+        del request.session['userType']
+        request.session.modified = True
+        return redirect('../login')
